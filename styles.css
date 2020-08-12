@@ -1,0 +1,49 @@
+* {
+    font: 400 1rem 'Poppins';
+}
+
+#main {
+    border-radius: 7px;
+}
+
+button, input {
+    font-size: 2rem;
+    height: 3.75rem;
+    border-radius: 7px;
+    box-shadow: 2px 2px 4px 1px rgba(184, 184, 184, 0.75);
+}
+
+button {
+    width: 5.4rem;
+    margin: .05rem .05rem;
+    border: 1.5px solid rgba(255, 152, 152, .25);
+    background-color: rgb(184, 184, 184, .2);
+    outline: none;
+    color: rgba(37, 37, 37, 0.85);
+    cursor: pointer;
+}
+
+button:hover {
+    border: 1.5px solid rgba(255, 152, 152, .5);
+    background-color: rgb(184, 184, 184, .5);
+    color: rgba(37, 37, 37, 1)
+}
+
+button:active {
+    border: 1.5px solid rgba(255, 152, 152, .75);
+    background-color: rgb(184, 184, 184, 1);
+    color: #003a80;
+}
+
+input {
+    width: 22.2rem;
+    margin-bottom: 0.25rem;
+    border: 1.5px solid rgba(126, 126, 126, 0.35);
+    text-align: right;
+    padding-right: 0.5rem;
+    color: #003a80;
+}
+
+i {
+    font-size: 2rem;
+}

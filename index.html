@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2de68ddebe.js" crossorigin="anonymous"></script>
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <audio id="meuAudio">
+        <source src="beep.mp3" type="audio/mpeg">
+    </audio>
+    <div id="main">
+        <input name="resultado" id="resultado" type="text" value="0" disabled>
+
+        <table>
+            <tr>
+                <td><button onClick="alternaSom(),tocaSom()" type="button"><i class="fas fa-music"></i></button></td>
+                <td><button onClick="adicionaSimbolo(value)" value="%" type="button">%</button></td>
+                <td><button onClick="limpar(value)" value="C" type="button">C</button></td>
+                <td><button onClick="limpar(value)" value="Del" type="button">Del</button></td>
+            </tr>
+            <tr>
+                <td><button onClick="adicionaNumero(value)" value="7" type="button">7</button></td>
+                <td><button onClick="adicionaNumero(value)" value="8" type="button">8</button></td>
+                <td><button onClick="adicionaNumero(value)" value="9" type="button">9</button></td>
+                <td><button onClick="adicionaSimbolo(value)" value="/" type="button">/</button></td>
+            </tr>
+            <tr>
+                <td><button onClick="adicionaNumero(value)" value="4" type="button">4</button></td>
+                <td><button onClick="adicionaNumero(value)" value="5" type="button">5</button></td>
+                <td><button onClick="adicionaNumero(value)" value="6" type="button">6</button></td>
+                <td><button onClick="adicionaSimbolo(value)" value="*" type="button">x</button></td>
+            </tr>
+            <tr>
+                <td><button onClick="adicionaNumero(value)" value="1" type="button">1</button></td>
+                <td><button onClick="adicionaNumero(value)" value="2" type="button">2</button></td>
+                <td><button onClick="adicionaNumero(value)" value="3" type="button">3</button></td>
+                <td><button onClick="adicionaSimbolo(value)" value="-" type="button">-</button></td>
+            </tr>
+            <tr>
+                <td><button onClick="adicionaNumero(value)" value="0" type="button">0</button></td>
+                <td><button onClick="adicionaVirgula(value)" value="," type="button">,</button></td>
+                <td><button onClick="adicionaSimbolo(value)" value="+" type="button">+</button></td>
+                <td><button onClick="calcular(value)" value="=" type="button">=</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="functions.js"></script>
+</body>
+
+</html>
