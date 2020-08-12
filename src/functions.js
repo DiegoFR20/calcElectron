@@ -8,11 +8,15 @@ function alternaSom() {
     temSom = !temSom
 }
 
+module.exports = alternaSom
+
 function tocaSom() {
     if (temSom) {
         meuSom.play()
     }
 }
+
+module.exports = tocaSom
 
 function adicionaNumero(x) {
     contDigito++
@@ -30,6 +34,8 @@ function adicionaNumero(x) {
     tocaSom()
 }
 
+module.exports = adicionaNumero
+
 function adicionaVirgula(x) {
     if (input.value.includes(','))
         return input.value
@@ -38,6 +44,8 @@ function adicionaVirgula(x) {
     }
     tocaSom()
 }
+
+module.exports = adicionaVirgula
 
 function adicionaSimbolo(x) {
     var array = Array.from(input.value)
@@ -52,6 +60,8 @@ function adicionaSimbolo(x) {
     tocaSom()
 }
 
+module.exports = adicionaSimbolo
+
 function limpar(x) {
     if (x == 'C')
         input.value = '0'
@@ -65,7 +75,11 @@ function limpar(x) {
     contDigito = 0
 }
 
-function calcular(x) {
+module.exports = limpar
+
+function calcular() {
     input.value = eval(input.value)
     tocaSom()
 }
+
+module.exports = calcular

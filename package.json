@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "devDependencies": {
-    "electron": "^9.2.0"
+    "electron": "^9.2.0",
+    "jest": "^26.4.0"
   },
   "scripts": {
     "start": "electron src/main",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC"
