@@ -1,11 +1,11 @@
 {
-  "name": "projetoeletron",
+  "name": "calculadora",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "devDependencies": {
+  "main": "./src/main.js",
+  "dependencies": {
     "electron": "^9.2.0",
-    "jest": "^26.4.0"
+    "electron-packager": "^15.0.0"
   },
   "scripts": {
     "start": "electron src/main",

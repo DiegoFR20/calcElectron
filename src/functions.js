@@ -3,12 +3,12 @@ var temSom = false
 var meuSom = document.querySelector("audio")
 var contDigito = 0
 
+meuSom.volume = 0.10;
+
 function alternaSom() {
     tocaSom()
     temSom = !temSom
 }
-
-module.exports = alternaSom
 
 function tocaSom() {
     if (temSom) {
@@ -16,16 +16,14 @@ function tocaSom() {
     }
 }
 
-module.exports = tocaSom
-
 function adicionaNumero(x) {
     contDigito++
     if (input.value == 0) {
         input.value = x
     } else {
-        if (contDigito == 3) {
-            input.value += `${x}.`
-            contDigito = 0
+        if (contDigito == 4) {
+            input.value += `.${x}`
+            contDigito = 1
         }
         else {
             input.value += x
@@ -33,8 +31,6 @@ function adicionaNumero(x) {
     }
     tocaSom()
 }
-
-module.exports = adicionaNumero
 
 function adicionaVirgula(x) {
     if (input.value.includes(','))
@@ -45,41 +41,39 @@ function adicionaVirgula(x) {
     tocaSom()
 }
 
-module.exports = adicionaVirgula
-
 function adicionaSimbolo(x) {
+    contDigito = 0;
     var array = Array.from(input.value)
     var ultimo = array[array.length - 1]
     var numero = parseInt(ultimo)
 
-    if (Number.isInteger(numero)) {
+    if (!Number.isNaN(numero)) {
         input.value += x
     }
-    else
-        input.value = input.value
+    else {
+        var stringModificada = input.value.slice(0, -1)
+        stringModificada += x
+        input.value = stringModificada
+    }
     tocaSom()
 }
-
-module.exports = adicionaSimbolo
 
 function limpar(x) {
     if (x == 'C')
         input.value = '0'
     if (x == 'Del') {
         var array = Array.from(input.value)
-        var inputArray = array.pop()
-
-        input.value = array.join('')
+        array.pop()
+        if (array.length == 0)
+            input.value = 0
+        else
+            input.value = array.join('')
     }
     tocaSom()
     contDigito = 0
 }
 
-module.exports = limpar
-
 function calcular() {
     input.value = eval(input.value)
     tocaSom()
 }
-
-module.exports = calcular

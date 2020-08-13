@@ -11,47 +11,114 @@
 </head>
 
 <body>
-    <audio id="meuAudio">
-        <source src="../assets/beep.mp3" type="audio/mpeg">
-    </audio>
-    <div id="main">
-        <input name="resultado" id="resultado" type="text" value="0" disabled>
+    <div id="root">
+        <audio controls hidden>
+            <source src="../assets/beep.mp3" type="audio/mpeg">
+        </audio>
+        <div id="main">
+            <input name="resultado" id="resultado" type="text" value="0" disabled>
 
-        <table>
-            <tr>
-                <td><button onClick="alternaSom(),tocaSom()" type="button"><i class="fas fa-music"></i></button></td>
-                <td><button onClick="adicionaSimbolo(value)" value="%" type="button">%</button></td>
-                <td><button onClick="limpar(value)" value="C" type="button">C</button></td>
-                <td><button onClick="limpar(value)" value="Del" type="button">Del</button></td>
-            </tr>
-            <tr>
-                <td><button onClick="adicionaNumero(value)" value="7" type="button">7</button></td>
-                <td><button onClick="adicionaNumero(value)" value="8" type="button">8</button></td>
-                <td><button onClick="adicionaNumero(value)" value="9" type="button">9</button></td>
-                <td><button onClick="adicionaSimbolo(value)" value="/" type="button">/</button></td>
-            </tr>
-            <tr>
-                <td><button onClick="adicionaNumero(value)" value="4" type="button">4</button></td>
-                <td><button onClick="adicionaNumero(value)" value="5" type="button">5</button></td>
-                <td><button onClick="adicionaNumero(value)" value="6" type="button">6</button></td>
-                <td><button onClick="adicionaSimbolo(value)" value="*" type="button">x</button></td>
-            </tr>
-            <tr>
-                <td><button onClick="adicionaNumero(value)" value="1" type="button">1</button></td>
-                <td><button onClick="adicionaNumero(value)" value="2" type="button">2</button></td>
-                <td><button onClick="adicionaNumero(value)" value="3" type="button">3</button></td>
-                <td><button onClick="adicionaSimbolo(value)" value="-" type="button">-</button></td>
-            </tr>
-            <tr>
-                <td><button onClick="adicionaNumero(value)" value="0" type="button">0</button></td>
-                <td><button onClick="adicionaVirgula(value)" value="," type="button">,</button></td>
-                <td><button onClick="adicionaSimbolo(value)" value="+" type="button">+</button></td>
-                <td><button onClick="calcular(value)" value="=" type="button">=</button></td>
-            </tr>
-        </table>
+            <table>
+                <tr>
+                    <td><button onClick="alternaSom(),tocaSom()" type="button"><i class="fas fa-music"></i></button>
+                    </td>
+                    <td><button onClick="adicionaSimbolo(value)" value="%" type="button">%</button></td>
+                    <td><button onClick="limpar(value)" value="C" type="button">C</button></td>
+                    <td><button onClick="limpar(value)" value="Del" type="button">Del</button></td>
+                </tr>
+                <tr>
+                    <td><button onClick="adicionaNumero(value)" value="7" type="button">7</button></td>
+                    <td><button onClick="adicionaNumero(value)" value="8" type="button">8</button></td>
+                    <td><button onClick="adicionaNumero(value)" value="9" type="button">9</button></td>
+                    <td><button onClick="adicionaSimbolo(value)" value="/" type="button">/</button></td>
+                </tr>
+                <tr>
+                    <td><button onClick="adicionaNumero(value)" value="4" type="button">4</button></td>
+                    <td><button onClick="adicionaNumero(value)" value="5" type="button">5</button></td>
+                    <td><button onClick="adicionaNumero(value)" value="6" type="button">6</button></td>
+                    <td><button onClick="adicionaSimbolo(value)" value="*" type="button">x</button></td>
+                </tr>
+                <tr>
+                    <td><button onClick="adicionaNumero(value)" value="1" type="button">1</button></td>
+                    <td><button onClick="adicionaNumero(value)" value="2" type="button">2</button></td>
+                    <td><button onClick="adicionaNumero(value)" value="3" type="button">3</button></td>
+                    <td><button onClick="adicionaSimbolo(value)" value="-" type="button">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onClick="adicionaNumero(value)" value="0" type="button">0</button></td>
+                    <td><button onClick="adicionaVirgula(value)" value="," type="button">,</button></td>
+                    <td><button onClick="adicionaSimbolo(value)" value="+" type="button">+</button></td>
+                    <td><button onClick="calcular()" value="=" type="button">=</button></td>
+                </tr>
+            </table>
+        </div>
     </div>
+    <script src="../src/Functions.js"></script>
+    <script>
+        var teclaDigitada
 
-    <script src="../src/functions.js"></script>
+        document.addEventListener('keydown', tecla)
+
+        function tecla(e) {
+            teclaDigitada = (e.key)
+            switch (teclaDigitada) {
+                case ('1'):
+                    adicionaNumero('1')
+                    break;
+                case ('2'):
+                    adicionaNumero('2')
+                    break;
+                case ('3'):
+                    adicionaNumero('3')
+                    break;
+                case ('4'):
+                    adicionaNumero('4')
+                    break;
+                case ('5'):
+                    adicionaNumero('5')
+                    break;
+                case ('6'):
+                    adicionaNumero('6')
+                    break;
+                case ('7'):
+                    adicionaNumero('7')
+                    break;
+                case ('8'):
+                    adicionaNumero('8')
+                    break;
+                case ('9'):
+                    adicionaNumero('9')
+                    break;
+                case ('0'):
+                    adicionaNumero('0')
+                    break;
+                case ('/'):
+                    adicionaSimbolo('/')
+                    break;
+                case ('*'):
+                    adicionaSimbolo('*')
+                    break;
+                case ('-'):
+                    adicionaSimbolo('-')
+                    break;
+                case ('+'):
+                    adicionaSimbolo('+')
+                    break;
+                case ('Enter'):
+                    calcular()
+                    break;
+                case ('='):
+                    calcular()
+                    break;
+                case (','):
+                    adicionaVirgula(',')
+                    break;
+                case ('Backspace'):
+                    limpar('Del')
+                    break;
+            }
+        }
+    </script>
 </body>
 
 </html>

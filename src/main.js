@@ -4,12 +4,13 @@ function createWindow() {
     let win = new BrowserWindow({
         width: 400,
         height: 456,
-        webPreferences: {
-            nodeIntegration: true
-        }
+        title: "Calculadora",
     })
 
-    win.setMenu(null)
+    win.setMenuBarVisibility(false)
+    // win.fullScreenable(false)
+    // win.resizable(false)
+    // win.maximizable(false)
     win.loadFile('../public/index.html')
 }
 
