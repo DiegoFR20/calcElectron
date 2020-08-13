@@ -8,9 +8,8 @@ function createWindow() {
     })
 
     win.setMenuBarVisibility(false)
-    // win.fullScreenable(false)
-    // win.resizable(false)
-    // win.maximizable(false)
+    win.resizable = false
+    win.maximizable = false
     win.loadFile('../public/index.html')
 }
 
